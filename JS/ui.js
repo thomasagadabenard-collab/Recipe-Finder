@@ -1,47 +1,36 @@
 import { saveFavorite } from "./favorites.js";
 
 const status = document.getElementById("status-message");
-const modal = document.getElementById("recipe-modal");
-const details = document.getElementById("recipe-details");
-const closeBtn = document.getElementById("close-modal");
 
 export function renderRecipes(recipes, container) {
   container.innerHTML = "";
 
   recipes.forEach(recipe => {
     const card = document.createElement("div");
-    card.className = "recipe-card";
+    card.className = "card";
+
     card.innerHTML = `
-      <img src="${recipe.strMealThumb}" />
-      <h3>${recipe.strMeal}</h3>
+      <div class="image-container">
+        <img 
+          src="${recipe.strMealThumb}" 
+          alt="${recipe.strMeal}" 
+          class="card-image"
+        >
+      </div>
+      <h3 class="card-title">${recipe.strMeal}</h3>
+      <button class="fav-btn"> Save</button>
     `;
 
-    card.addEventListener("click", () => {
-      showRecipeDetails(recipe);
+    
+    card.querySelector(".fav-btn").addEventListener("click", (e) => {
+      e.stopPropagation(); 
+      saveFavorite(recipe);
+      e.target.textContent = " Saved";
     });
 
     container.appendChild(card);
   });
 }
-
-function showRecipeDetails(recipe) {
-  modal.classList.remove("hidden");
-
-  details.innerHTML = `
-    <h2>${recipe.strMeal}</h2>
-    <img src="${recipe.strMealThumb}">
-    <p>${recipe.strInstructions}</p>
-    <button id="fav-btn">Save to Favorites</button>
-  `;
-
-  document.getElementById("fav-btn").addEventListener("click", () => {
-    saveFavorite(recipe);
-  });
-}
-
-closeBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
 
 export function showLoading() {
   status.textContent = "Loading recipes...";
