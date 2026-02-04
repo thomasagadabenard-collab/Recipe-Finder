@@ -21,6 +21,18 @@ export function renderRecipes(recipes, container) {
       <button class="fav-btn"> Save</button>
     `;
 
+    card.addEventListener("click", () => {
+    
+    if (card.querySelector(".instructions")) return;
+
+    let para = document.createElement("p");
+    para.className = "instructions";  
+    para.innerText = recipe.strInstructions;
+
+    card.appendChild(para);
+});
+
+
     
     card.querySelector(".fav-btn").addEventListener("click", (e) => {
       e.stopPropagation(); 

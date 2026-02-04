@@ -77,23 +77,8 @@ header h1{
 
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
 
-.recipe-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
 
-.recipe-card:hover {
-  transform: scale(1.03);
-}
 
 .modal {
   position: fixed;
@@ -108,13 +93,6 @@ header h1{
   display: none;
 }
 
-.recipe-card {
-    width: 400px;
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
 
 .recipe-img {
   width: 100%;
@@ -139,6 +117,16 @@ header h1{
     width: 400px;
     margin: 0 auto;
     text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: scale(1.03);
 }
 
 .card > *{
@@ -151,4 +139,12 @@ header h1{
 .card-image{
     width: 100%;
 }
+
+.instructions {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 1px solid #eee;
+}
+
 
