@@ -1,7 +1,7 @@
 import { searchRecipes } from "./api.js";
 import { renderRecipes, showLoading, showError, hideLoading } from "./ui.js";
 
-// DOM elements
+
 const form = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 const grid = document.getElementById("recipes-grid");
