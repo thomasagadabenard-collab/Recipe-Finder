@@ -6,9 +6,16 @@ const search = document.querySelector(".search");
 
 const rotate = document.querySelector(".rotate")
 
+const searchInput = document.getElementById("search-input");
+
 
 search.addEventListener("click", () => {
-  rotate.classList.add("active");
+
+  let see = searchInput.value.trim();
+  if(!see)return
+  else{
+    rotate.classList.add("active");
+  }
 });
 
 
