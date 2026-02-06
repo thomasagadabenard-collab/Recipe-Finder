@@ -2,6 +2,16 @@ import { saveFavorite } from "./favorites.js";
 
 const status = document.getElementById("status-message");
 
+const search = document.querySelector(".search");
+
+const rotate = document.querySelector(".rotate")
+
+
+search.addEventListener("click", () => {
+  rotate.classList.add("active");
+});
+
+
 export function renderRecipes(recipes, container) {
   container.innerHTML = "";
 
@@ -64,6 +74,7 @@ export function renderRecipes(recipes, container) {
 export function showLoading() {
   status.textContent = "Loading recipes...";
   status.style.color = "black";
+  
 }
 
 export function hideLoading() {
