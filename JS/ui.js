@@ -21,16 +21,33 @@ export function renderRecipes(recipes, container) {
       <button class="fav-btn"> Save</button>
     `;
 
-    card.addEventListener("click", () => {
-    
-    if (card.querySelector(".instructions")) return;
+   card.addEventListener("click", () => {
+      
+      if (document.querySelector(".modal")) return;
 
-    let para = document.createElement("p");
-    para.className = "instructions";  
-    para.innerText = recipe.strInstructions;
+      const modal = document.createElement("div");
+      modal.className = "modal";
 
-    card.appendChild(para);
-});
+      modal.innerHTML = `
+        <div class="modal-content">
+          <span id="close-modal">&times;</span>
+          <h3>${recipe.strMeal}</h3>
+          <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" class="modal-image">
+          <p>${recipe.strInstructions}</p>
+        </div>
+      `;
+
+      document.body.appendChild(modal);
+
+      modal.querySelector("#close-modal").addEventListener("click", () => {
+        modal.remove();
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.remove();
+      });
+    });
+
 
 
     
