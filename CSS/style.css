@@ -124,7 +124,7 @@ header h1 {
 
 .modal-content {
   background: var(--light);
-  width: 90%;
+  width: 60%;
   max-width: 700px;
   max-height: 80vh;
   overflow-y: auto;
@@ -140,7 +140,7 @@ header h1 {
 }
 
 .modal-image {
-  width: 80%;
+  width: 60%;
   margin: 1.25rem auto;
 }
 
@@ -218,6 +218,17 @@ select:focus,
 input:focus {
   outline: 2px solid orange;
   outline-offset: 2px;
+}
+
+
+.ordered-list {
+  padding: 4px 30px;
+  text-align: left;
+  list-style: decimal;
+}
+
+.ordered-list li {
+  margin-bottom: 10px;
 }
 
 /* MEDIA */
