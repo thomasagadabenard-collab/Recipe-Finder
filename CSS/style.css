@@ -156,38 +156,6 @@ header h1 {
   display: block;
 }
 
-/* ROTATE */
-.rotate {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: center;
-  margin: 10vh auto;
-  width: min(90%, 350px);
-  transition: transform 0.3s ease;
-}
-
-.rotate.active {
-  display: none;
-}
-
-.rotate img {
-  width: 45%;
-  height: auto;
-  transition: all 0.3s ease;
-}
-
-.rotate-image-chicken {
-  transform: rotate(-5deg);
-}
-
-.rotate-image-fish {
-  transform: rotate(5deg);
-}
-
-.rotate:hover img {
-  transform: rotate(0);
-}
 
 /* BUTTON */
 .fav-btn {

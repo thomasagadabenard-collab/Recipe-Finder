@@ -10,12 +10,10 @@ const searchInput = document.getElementById("search-input");
 searchBtn.addEventListener("click", () => {
   const value = searchInput.value.trim();
   if (!value) return;
-  else{
-    rotate.classList.add("active");
-  }
+  
 });
 
-/* RENDER */
+
 export function renderRecipes(recipes, container) {
   container.innerHTML = "";
 
@@ -35,7 +33,6 @@ export function renderRecipes(recipes, container) {
       <button class="fav-btn">Save</button>
     `;
 
-    /* MODAL */
     card.addEventListener("click", () => {
       if (document.querySelector(".modal")) return;
 
@@ -87,7 +84,6 @@ export function renderRecipes(recipes, container) {
   });
 }
 
-/* STATUS */
 export function showLoading() {
   status.textContent = "Loading recipes...";
   status.style.color = "black";
