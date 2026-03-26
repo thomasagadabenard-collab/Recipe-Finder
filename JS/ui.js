@@ -10,7 +10,9 @@ const searchInput = document.getElementById("search-input");
 searchBtn.addEventListener("click", () => {
   const value = searchInput.value.trim();
   if (!value) return;
-  rotate.classList.add("active");
+  else{
+    rotate.classList.add("active");
+  }
 });
 
 /* RENDER */
