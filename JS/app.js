@@ -20,7 +20,6 @@ form.addEventListener("submit", async (e) => {
   try {
     const recipes = await searchRecipes(query);
 
-    // Handle empty or null response safely
     if (!recipes || recipes.length === 0) {
       showError("No recipes found");
       return;
@@ -28,13 +27,11 @@ form.addEventListener("submit", async (e) => {
 
     renderRecipes(recipes, grid);
 
-    // Only hide loading AFTER successful render
     hideLoading();
 
   } catch (err) {
     console.error("Fetch error:", err);
 
-    // Show actual error message (helps debugging in production)
     showError(err.message || "Something went wrong. Try again.");
   }
 });

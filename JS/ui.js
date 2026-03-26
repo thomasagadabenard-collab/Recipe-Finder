@@ -1,3 +1,4 @@
+import { searchRecipes } from "./api.js";
 import { saveFavorite } from "./favorites.js";
 
 /* ELEMENTS */
@@ -5,6 +6,8 @@ const status = document.getElementById("status-message");
 const searchBtn = document.querySelector(".search");
 const rotate = document.querySelector(".rotate");
 const searchInput = document.getElementById("search-input");
+const soup = document.querySelector(".soup");
+const bread = document.querySelector(".bread");
 
 /* SEARCH */
 searchBtn.addEventListener("click", () => {
@@ -12,7 +15,6 @@ searchBtn.addEventListener("click", () => {
   if (!value) return;
   
 });
-
 
 export function renderRecipes(recipes, container) {
   container.innerHTML = "";
